@@ -2,7 +2,7 @@ Algoritmo Proyecto
 	
 	Definir precioOriginal, cantidad, sumaPrendas, tipoEnvio, porcentajePorCantidad, impuesto, cantidadPrendas, precioPrenda, precioPromocional, costoEnvio, precioFinal, Peso, descuento, cuponDescuento, i, j Como Entero
 	Definir IVA, porcentaje, descuentoAdicional, descuentoTotal Como Real
-	Definir prenda, respuesta1, respuesta2  Como Caracter
+	Definir prenda, respuesta1, respuesta2, direccionEnvio  Como Caracter
 	
 	IVA <- 0.12
 	
@@ -54,6 +54,7 @@ Algoritmo Proyecto
 	
 	Escribir "Ingrese datos para entrega"
 	Escribir "envio nacional (Opcion 1) o internacional (Opcion 2)"
+
 	
 	repetir
 		Escribir "ingrese 1 o 2"
@@ -63,6 +64,8 @@ Algoritmo Proyecto
 		valorEnvio = 3000
 	sino valorEnvio = 6000
 	FinSi
+	Escribir "ingrese su direccion de envio"
+	leer direccionEnvio
 		
 	precioPromocional <- sumaPrendas - descuento
 	impuesto <- precioPromocional * IVA
@@ -70,6 +73,7 @@ Algoritmo Proyecto
 	
 	
 	Escribir "el neto es: ", sumaPrendas
+	Escribir "Su dirección de envío es: ", direccionEnvio
 	Escribir "el valor del envio es: $", valorEnvio
 	Escribir "el descuento total aplicado es de: ", descuentoTotal,"%"
 	Escribir "el descuento por cantidad es:", porcentajePorCantidad,"%"
