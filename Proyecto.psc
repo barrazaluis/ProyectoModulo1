@@ -1,7 +1,7 @@
 Algoritmo Proyecto
 	
-	Definir precioOriginal, valorBaseEnvio, valorEnvio,  Cantidad, sumaPrendas, tipoEnvio, porcentajePorCantidad, cargoPeso, impuesto, cantidadPrendas, precioPrenda, precioPromocional, costoEnvio, precioFinal, Peso, cuponDescuento, i, j Como Entero
-	Definir IVA, porcentajeCupon, descuentoAdicional, descuento, descuentoTotal, descuentoAplicar, pesoPrenda, totalPeso Como Real
+	Definir precioOriginal, valorBaseEnvio, valorEnvio, descuento, Cantidad, sumaPrendas, tipoEnvio, porcentajePorCantidad, cargoPeso, impuesto, cantidadPrendas, precioPrenda, precioPromocional, costoEnvio, precioFinal, Peso, cuponDescuento, i, j Como Entero
+	Definir IVA, porcentajeCupon, descuentoAdicional, descuentoTotal, descuentoAplicar, pesoPrenda, totalPeso Como Real
 	Definir prenda, respuesta1, respuesta2, direccionEnvio  Como Caracter
 	
 	IVA <- 0.12
@@ -59,8 +59,8 @@ Algoritmo Proyecto
 		descuentoTotal <- porcentajePorCantidad
 		descuentoAplicar <- descuentoAdicional
 	FinSi
-	
-	descuento <- sumaPrendas * //corregir da error
+	descuento <- 0
+	descuento <- Trunc(sumaPrendas * descuentoAplicar) //corregir da error
 	
 	Escribir "Ingrese datos para entrega"
 	Escribir "envio nacional (Opcion 1) o internacional (Opcion 2)"
@@ -84,7 +84,7 @@ Algoritmo Proyecto
 	valorEnvio <- valorBaseEnvio + cargoPeso
 	
 	precioPromocional <- sumaPrendas - descuento
-	impuesto <- precioPromocional * IVA
+	impuesto <- Trunc(precioPromocional * IVA)
 	precioFinal <- precioPromocional + impuesto
 	
 	
