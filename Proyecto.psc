@@ -1,7 +1,7 @@
 Algoritmo Proyecto
 	
 	Definir precioOriginal, cantidad, sumaPrendas, tipoEnvio, porcentajePorCantidad, impuesto, cantidadPrendas, precioPrenda, precioPromocional, costoEnvio, precioFinal, Peso, descuento, cuponDescuento, i, j Como Entero
-	Definir IVA, porcentaje, descuentoAdicional, descuentoTotal Como Real
+	Definir IVA, porcentaje, descuentoAdicional, descuentoTotal, pesoPrenda, totalPeso Como Real
 	Definir prenda, respuesta1, respuesta2, direccionEnvio  Como Caracter
 	
 	IVA <- 0.12
@@ -10,14 +10,18 @@ Algoritmo Proyecto
 	leer i
 	
 	sumaPrendas <- 0
+	totalPeso <- 0
 	
 	Dimension prenda[i]
 	Dimension precioPrenda[i]
+	Dimension pesoPrenda[i]
 	
 	Para i <- 1 Hasta i Con Paso 1 Hacer
 		Escribir "Ingrese tipo de prenda ", i ": y posterimente ingrese el precio de la prenda ", i
 		leer prenda[i], precioPrenda[i]
+		pesoPrenda[i] <- Aleatorio(1, 20) / 10
 		sumaPrendas <- sumaPrendas + precioPrenda[i]
+		totalPeso <- totalPeso + pesoPrenda[i]
 	//descuento por cantidad
 		si i = 1 entonces 
 			descuentoAdicional = 0.01
@@ -73,12 +77,13 @@ Algoritmo Proyecto
 	
 	
 	Escribir "el neto es: ", sumaPrendas
-	Escribir "Su dirección de envío es: ", direccionEnvio
+	Escribir "el peso de las prendas es: ", totalPeso, " Kilos"
 	Escribir "el valor del envio es: $", valorEnvio
 	Escribir "el descuento total aplicado es de: ", descuentoTotal,"%"
 	Escribir "el descuento por cantidad es:", porcentajePorCantidad,"%"
 	Escribir "el descuento aplicado es: ", descuento
 	Escribir "el IVA es de: ", impuesto
 	Escribir "el precio final es: ", precioFinal
-
+	Escribir "Su será enviado a la dirección: ", direccionEnvio
+	
 FinAlgoritmo
