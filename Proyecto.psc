@@ -85,17 +85,21 @@ Algoritmo Proyecto
 	
 	precioPromocional <- sumaPrendas - descuento
 	impuesto <- Trunc(precioPromocional * IVA)
-	precioFinal <- precioPromocional + impuesto
+	precioFinal <- precioPromocional + impuesto + valorEnvio
 	
-	
-	Escribir "el valor neto de su compra es: ", sumaPrendas
+	Escribir ""
+	Escribir "*********** Detalle de su Boleta ***********"
+	Escribir ""
+	Escribir "el valor de su compra es $: ", sumaPrendas
 	Escribir "el peso de las prendas es: ", totalPeso, " Kilos"
-	Escribir "el valor del envio es: $", valorEnvio
-	Escribir "el descuento total aplicado es de: ", descuentoTotal,"%"
 	Escribir "el descuento por cantidad es:", porcentajePorCantidad,"%"
-	Escribir "el descuento aplicado es: ", descuento
-	Escribir "el IVA es de: ", impuesto
-	Escribir "el precio final es: ", precioFinal
-	Escribir "Su será enviado a la dirección: ", direccionEnvio
+	Escribir "el descuento total aplicado es de: ", descuentoTotal,"%"
+	Escribir "el descuento aplicado es de: $", descuento
+	Escribir "el valor del envio es: $", valorEnvio
+	Escribir "el IVA es de: $", impuesto
+	Escribir "el precio final a pagar es: $", precioFinal
+	Escribir "Su pedido será enviado a la dirección: ", direccionEnvio
+	Escribir "*********** Detalle de prendas compradas ***********"
+
 	
 FinAlgoritmo
