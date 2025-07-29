@@ -6,35 +6,43 @@ Algoritmo Proyecto
 	
 	IVA <- 0.12
 	
-	Escribir "Ingrese cantidad de prendas"
-	leer i
+	Escribir "*** Bienvenidos al eCommerce LBARRAZA ***"
 	
+	Repetir
+		Escribir "Ingrese cantidad de articulos que desea comprar"
+		leer cantidadPrendas
+	Hasta Que cantidadPrendas > 0
+ 
 	sumaPrendas <- 0
 	totalPeso <- 0
 	
-	Dimension prenda[i]
-	Dimension precioPrenda[i]
-	Dimension pesoPrenda[i]
+	Dimension prenda[cantidadPrendas]
+	Dimension precioPrenda[cantidadPrendas]
+	Dimension pesoPrenda[cantidadPrendas]
 	
-	Para i <- 1 Hasta i Con Paso 1 Hacer
-		Escribir "Ingrese tipo de prenda ", i ": y posterimente ingrese el precio de la prenda ", i
-		leer prenda[i], precioPrenda[i]
+	Para i <- 1 Hasta cantidadPrendas Con Paso 1 Hacer
+		Escribir "Ingrese tipo de prenda ", i
+		leer prenda[i]
+		
+		Escribir "Ingrese precio de prenda", i
+		leer precioPrenda[i]
+		
 		pesoPrenda[i] <- Aleatorio(1, 10) / 10
 		sumaPrendas <- sumaPrendas + precioPrenda[i]
 		totalPeso <- totalPeso + pesoPrenda[i]
 	//descuento por cantidad
-		si i = 1 entonces 
+		si cantidadPrendas = 1 entonces 
 			descuentoAdicional = 0.01
 		sino
-			si i = 2 entonces
+			si cantidadPrendas = 2 entonces
 				descuentoAdicional = 0.02
 			sino 
-				si i = 3 entonces
+				si cantidadPrendas = 3 entonces
 					descuentoAdicional = 0.03
-					si i = 4 entonces
+					si cantidadPrendas = 4 entonces
 						descuentoAdicional = 0.04
 					sino
-						si i <= 5 entonces
+						si cantidadPrendas <= 5 entonces
 							descuentoAdicional = 0.05
 						FinSi
 					FinSi
@@ -89,7 +97,14 @@ Algoritmo Proyecto
 	
 	Escribir ""
 	Escribir "*********** Detalle de su Boleta ***********"
+	Escribir "comercio L_BARRAZA"
 	Escribir ""
+	Escribir "su cumpra incluye lo siguiente:"
+	Para i <- 1 Hasta cantidadPrendas Con Paso 1 Hacer
+		Escribir "Prenda ", i, ": ", prenda[i]
+		Escribir "  Precio: $", precioPrenda[i]
+		Escribir "  Peso: ", pesoPrenda[i], " Kg"
+	Fin Para	
 	Escribir "el valor de su compra es $: ", sumaPrendas
 	Escribir "el peso de las prendas es: ", totalPeso, " Kilos"
 	Escribir "el descuento por cantidad es:", porcentajePorCantidad,"%"
@@ -99,7 +114,6 @@ Algoritmo Proyecto
 	Escribir "el IVA es de: $", impuesto
 	Escribir "el precio final a pagar es: $", precioFinal
 	Escribir "Su pedido será enviado a la dirección: ", direccionEnvio
-	Escribir "*********** Detalle de prendas compradas ***********"
 
 	
 FinAlgoritmo
